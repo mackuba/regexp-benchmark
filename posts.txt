@@ -1,0 +1,30 @@
+I just want a nice looking hierarchical notes app that isn't electron or flatpak... Why is it so hard to find one?
+20 anos de internet! Sou do tempo do discador virtual, do provedor (o meu primeiro foi o Terra), do Netscape, do Kazaa Media Desktop (pago pq a versão gratuita só os ousados usavam🤣), do eMule, do MSN Messenger (e seu mecanismo de chamar a atenção 🤣), do XP e do Mac OS X Tiger. Me respeitem! 🤣
+Okay so I actually really liked the rearmored Boba Fett design from Mandalorian. Appreciated what I took as him caring for one of the few things he had left from his father after losing everything in Return of the Jedi.
+Yeah, idk. Because I jump between both all the time, so my perspective on the switching cost is skewed. But for the last while I've hated having to load up Windows for my CAD software. Lots of little annoyances persisting (while the ones on Linux are getting fixed) and it's just slower.
+I switched to Ubuntu on my home computer a few years ago, and the wild thing is, things *just work* now! The bad old days of having to hand-roll a driver are gone, and imo, things are actually less painful than windows/mac.
+Sorry it was Facebook Markup Language (FBML). Which turned into OpenGraph. FBML was discontinued in 2012. Now Farcaster has taken OpenGraph to make Frames, which is being generalized to OpenFrame, which will make its way into Bluesky (through App View). Crazy how things progress.
+I've been waiting my whole life to dress like a Dark Jedi whom Ahsoka dispatches before I've barely gotten my lightsaber off my belt.
+Acho que faz sentido usar o software livre pelo menos em situações em que você fica entre o software e refém de software proprietário (por exemplo, Windows vs Linux e MS Office vs LibreOffice)
+The thing #BlueSky is missing is a proper #MacOS client. The non-scalable window and the tendency to skip entire parts of words while typing is quite annoying. I’m willing to cope with these bugs but I’m thinking of those not already convinced this has all the potential to be a better X.
+Yeah. By the way, the Steam Desk desktop mode is basically just stock KDE Plasma. So if you've poked around in that and find it usable, you might be ok switching.
+Cet article est l'occasion de revenir sur une faille de sécurité particulièrement grave : pendant 18 mois, le paquet Debian OpenSSL générait des clés privées tout à fait prévisibles (lu).
+Moi je voudrais un jeu Star Wars en monde ouvert un peu en mode western, y a Outlaws mais bon c'est Ubisoft et disons que je suis fâchée avec Ubisoft
+I have two monitors hooked up to my mac mini, a proper 24" LG UltraFine Display, and a 47" LG TV SSCR2. TV's are really cheap  compared to dedicated monitors and the image quality is quite acceptable. The ability to drag windows from one monitor to the other makes for a tidy, expansive workspace.
+I was a unix sysadmin for 15 years so I totally get where you’re coming from. But it’s macOS for me these days! Best of both worlds…
+The Tech Enthusiast/Tech Professional dichotomy remains undefeated. For every humble dev who doesn't even trust their non-networked printer, 100 Tech YouTubers replace their light switches with unsecured Linux SOCs that are using up 99% of their 10Gbps internet connection to send advance-fee spam.
+Good to know that distro devs are thinking about these things: What we need to take away from the XZ Backdoor https://news.opensuse.org/2024/04/12/learn-from-the-xz-backdoor/
+Haha, thank you! Arch isn't too bad; just a learning experience. A harsh one though, no doubt. It really is great for learning most anything, especially for future reference. I'm actually only comfy in the terminal now because of Arch and partially NixOS! I do love KDE Neon, as well.
+Apple says there is no need to add this in the app, user might turn off iCloud sync in system settings if they really want..
+Is there a way to tell the #swiftlang compiler to just compile a single file like `swift build test.swift -o test`? Or do I need to have a Package.swift, Sources folder etc.?
+somehow KDE Plasma gives me eyestrain and stuff (at least for the default color scheme ig) so i decided to go back to GNOME for a while
+@markets: #5Things: Biden strengthens ties with Japan and the Philippines. Apple plans to overhaul its Macs. And bond traders are bracing for the prospect of a world with no Fed rate cuts. Here’s what’s moving markets. https://t.co/xv2PfhNX4M
+Rise of Skywalker had some good scenes, but the overall plotting just... it was classic Abrams, "just keep raising the stakes until the whole thing is cartoonish".
+What Threads chooses to show me is just bonkers. I don’t think anyone can really figure out what it’s algos are doing. This is why the centralized algo model is just an evil thing we must crush, whether with BlueSky’s PDS, or an ActivityPub answer to it. As soon as there is one.
+Must have if you're developing CoreData apps.. #buildinpublic
+Yes but the argument you made was "I still maintain the price is the major barrier to more Mac users." and it just isn't the case. Used Macs can be had for less than $200.
+Fortunately Twitter is still not showing ads on Twitter for Mac. They’ve either forgotten that the app exists or fired everyone who was in charge of development because the last update was on October 7, 2022.
+Here's a screenshot from atproto.tools showing the WhiteWind repo and the updates it made to its blog post over the past 2 days as well as the post to Bluesky that announced the blog post. Really awesome to see other apps now using the Relay and protocol!
+I use an Apple Studio Display with my Mac Studio. It's a beautiful display for photography but overkill I'm sure. I've been looking at the Samsung M8 if I wanted to add a second monitor and that looks good too.
+Já nebyl fanouškem iOS už v dobách iPod Touch a později se to ještě zesílilo s nákupem iPadu. Dokonce i na Macu dělám ve starým MacOS X, protože čím novější verze, tím je to podobnější iOSu 🫣
+Each version of MacOS introduces a new and completely different way to make screen mirroring infuriating.
