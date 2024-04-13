@@ -1,9 +1,23 @@
 import Foundation
 
-static let regexps = [
-  /linux/i, /debian/i, /ubuntu/i, /\bredhat\b/i, /\bRHEL\b/, /\bSUSE\b/, /\bCentOS\b/, /\bopensuse\b/i,
-  /\bslackware\b/i, /\bKDE\b/, /\bGTK\d?\b/, /#GNOME\b/, /\bGNOME\s?\d+/, /\bkde plasma\b/i,
-  /apt\-get/, /\bflatpak\b/i, /\b[Xx]org\b/
+let regexps: [Regex<Substring>] = [
+  try! Regex("linux").ignoresCase(),
+  try! Regex("debian").ignoresCase(),
+  try! Regex("ubuntu").ignoresCase(),
+  try! Regex("\\bredhat\\b").ignoresCase(),
+  try! Regex("\\bRHEL\\b"),
+  try! Regex("\\bSUSE\\b"),
+  try! Regex("\\bCentOS\\b"),
+  try! Regex("\\bopensuse\\b").ignoresCase(),
+  try! Regex("\\bslackware\\b").ignoresCase(),
+  try! Regex("\\bKDE\\b"),
+  try! Regex("\\bGTK\\d?\\b"),
+  try! Regex("#GNOME\\b"),
+  try! Regex("\\bGNOME\\s?\\d+"),
+  try! Regex("\\bkde plasma\\b").ignoresCase(),
+  try! Regex("apt\\-get"),
+  try! Regex("\\bflatpak\\b").ignoresCase(),
+  try! Regex("\\b[Xx]org\\b")
 ]
 
 let posts = try! String(contentsOfFile: "posts.txt").components(separatedBy: .newlines)
@@ -12,8 +26,6 @@ var matched = 0
 
 for _ in 0..<loops {
   for txt in posts {
-    let range = NSRange(location: 0, length: txt.utf16.count)
-
     for r in regexps {
       if txt.contains(r) {
         matched += 1
