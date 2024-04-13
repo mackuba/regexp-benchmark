@@ -36,11 +36,6 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     let iterations: usize = args[1].parse().expect("Invalid number of iterations");
 
-    // let iterations: usize = std::env::args().nth(1)
-    //         .expect("Please provide the number of iterations as the first argument.")
-    //         .parse()
-    //         .expect("Failed to parse number of iterations");
-
     let mut total_matches = 0;
 
     for _ in 0..iterations {
