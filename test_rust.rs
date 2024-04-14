@@ -1,16 +1,10 @@
+use rayon::prelude::*;
 use regex::Regex;
 use std::env;
 use std::fs;
 
 fn main() {
-    let text = match fs::read_to_string("posts.txt") {
-        Ok(content) => content,
-        Err(_) => {
-            eprintln!("Error reading text file.");
-            return;
-        }
-    };
-
+    let text = fs::read_to_string("posts.txt").unwrap();
     let lines: Vec<&str> = text.lines().collect();
 
     let regexps = vec![
@@ -42,17 +36,11 @@ fn main() {
     let mut total_matches = 0;
 
     for _ in 0..iterations {
-        for r in &regexps {
-            for line in &lines {
-                match r.find(line) {
-                    Some(_value) => {
-                        total_matches += 1;
-                    }
-                    None => {}
-                }
-            }
-        }
+        total_matches = lines
+            .par_iter()
+            .map(|line| regexps.iter().filter(|r| r.is_match(line)).count())
+            .sum();
     }
 
-    println!("Total matches: {}", total_matches / iterations);
+    println!("Total matches: {total_matches}");
 }
