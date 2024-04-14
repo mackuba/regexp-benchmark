@@ -33,8 +33,11 @@ fn main() {
         Regex::new(r"\b[Xx]org\b").unwrap(),
     ];
 
-    let args: Vec<String> = env::args().collect();
-    let iterations: usize = args[1].parse().expect("Invalid number of iterations");
+    let iterations: usize = env::args()
+        .nth(1)
+        .unwrap()
+        .parse()
+        .expect("Invalid number of iterations");
 
     let mut total_matches = 0;
 
