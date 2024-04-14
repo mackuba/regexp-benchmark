@@ -42,11 +42,10 @@ fn main() {
         for r in &regexps {
             for line in &lines {
                 match r.find(line) {
-                  Some(_value) => {
-                    total_matches += 1;                    
-                  },
-                  None => {
-                  }
+                    Some(_value) => {
+                        total_matches += 1;
+                    }
+                    None => {}
                 }
             }
         }
