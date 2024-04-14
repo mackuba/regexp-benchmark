@@ -5,7 +5,6 @@ use std::fs;
 
 fn main() {
     let text = fs::read_to_string("posts.txt").unwrap();
-    let lines: Vec<&str> = text.lines().collect();
 
     let regexps = vec![
         Regex::new(r"(?i)linux").unwrap(),
@@ -36,8 +35,8 @@ fn main() {
     let mut total_matches = 0;
 
     for _ in 0..iterations {
-        total_matches = lines
-            .par_iter()
+        total_matches = text
+            .par_lines()
             .map(|line| regexps.iter().filter(|r| r.is_match(line)).count())
             .sum();
     }
