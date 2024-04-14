@@ -1,6 +1,7 @@
 [package]
 name = "test_rust"
 edition = "2021"
+version = "0.1.0"
 
 [[bin]]
 name = "test_rust"
