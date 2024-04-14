@@ -1,10 +1,12 @@
 [package]
 name = "test_rust"
 edition = "2021"
+version = "0.1.0"
 
 [[bin]]
 name = "test_rust"
 path = "test_rust.rs"
 
 [dependencies]
+rayon = "1.10.0"
 regex = "1.5.4"

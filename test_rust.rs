@@ -1,56 +1,43 @@
+use rayon::prelude::*;
 use regex::Regex;
 use std::env;
+use std::error::Error;
 use std::fs;
 
-fn main() {
-    let text = match fs::read_to_string("posts.txt") {
-        Ok(content) => content,
-        Err(_) => {
-            eprintln!("Error reading text file.");
-            return;
-        }
-    };
-
-    let lines: Vec<&str> = text.lines().collect();
+fn main() -> Result<(), Box<dyn Error>> {
+    let text = fs::read_to_string("posts.txt")?;
 
     let regexps = vec![
-        Regex::new(r"(?i)linux").unwrap(),
-        Regex::new(r"(?i)debian").unwrap(),
-        Regex::new(r"(?i)ubuntu").unwrap(),
-        Regex::new(r#"\bredhat\b"#).unwrap(),
-        Regex::new(r"\bRHEL\b").unwrap(),
-        Regex::new(r"\bSUSE\b").unwrap(),
-        Regex::new(r"\bCentOS\b").unwrap(),
-        Regex::new(r"(?i)\bopensuse\b").unwrap(),
-        Regex::new(r"(?i)\bslackware\b").unwrap(),
-        Regex::new(r"\bKDE\b").unwrap(),
-        Regex::new(r"\bGTK\d?\b").unwrap(),
-        Regex::new(r"#GNOME\b").unwrap(),
-        Regex::new(r"\bGNOME\s?\d+").unwrap(),
-        Regex::new(r"(?i)\bkde plasma\b").unwrap(),
-        Regex::new(r"apt-get").unwrap(),
-        Regex::new(r"(?i)\bflatpak\b").unwrap(),
-        Regex::new(r"\b[Xx]org\b").unwrap(),
+        Regex::new(r"(?i)linux")?,
+        Regex::new(r"(?i)debian")?,
+        Regex::new(r"(?i)ubuntu")?,
+        Regex::new(r#"\bredhat\b"#)?,
+        Regex::new(r"\bRHEL\b")?,
+        Regex::new(r"\bSUSE\b")?,
+        Regex::new(r"\bCentOS\b")?,
+        Regex::new(r"(?i)\bopensuse\b")?,
+        Regex::new(r"(?i)\bslackware\b")?,
+        Regex::new(r"\bKDE\b")?,
+        Regex::new(r"\bGTK\d?\b")?,
+        Regex::new(r"#GNOME\b")?,
+        Regex::new(r"\bGNOME\s?\d+")?,
+        Regex::new(r"(?i)\bkde plasma\b")?,
+        Regex::new(r"apt-get")?,
+        Regex::new(r"(?i)\bflatpak\b")?,
+        Regex::new(r"\b[Xx]org\b")?,
     ];
 
-    let args: Vec<String> = env::args().collect();
-    let iterations: usize = args[1].parse().expect("Invalid number of iterations");
-
+    let iterations: usize = env::args().nth(1).unwrap_or("1".to_string()).parse()?;
     let mut total_matches = 0;
 
     for _ in 0..iterations {
-        for r in &regexps {
-            for line in &lines {
-                match r.find(line) {
-                  Some(_value) => {
-                    total_matches += 1;                    
-                  },
-                  None => {
-                  }
-                }
-            }
-        }
+        total_matches = text
+            .par_lines()
+            .map(|line| regexps.iter().filter(|r| r.is_match(line)).count())
+            .sum();
     }
 
-    println!("Total matches: {}", total_matches / iterations);
+    println!("Total matches: {total_matches}");
+
+    Ok(())
 }
