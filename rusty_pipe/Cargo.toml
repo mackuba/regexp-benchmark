@@ -1,0 +1,11 @@
+[package]
+name = "rusty_pipe"
+edition = "2021"
+version = "0.1.0"
+
+[[bin]]
+name = "rusty_pipe"
+path = "rusty_pipe.rs"
+
+[dependencies]
+regex = "1.5.4"
