@@ -1,0 +1,7 @@
+require "rake/extensiontask"
+
+Rake::ExtensionTask.new("ruby_magnus") do |c|
+  c.lib_dir = "lib/ruby_magnus"
+end
+
+task :default => :compile

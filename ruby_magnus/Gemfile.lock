@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (13.2.1)
+    rake-compiler (1.2.7)
+      rake
+    rb_sys (0.9.96)
+
+PLATFORMS
+  arm64-darwin-21
+  ruby
+
+DEPENDENCIES
+  rake
+  rake-compiler
+  rb_sys
+
+BUNDLED WITH
+   2.5.6
