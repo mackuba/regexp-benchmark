@@ -1,6 +1,6 @@
+use lazy_static::lazy_static;
 use magnus::{function, Error, Ruby};
 use regex::Regex;
-use lazy_static::lazy_static;
 
 lazy_static! {
     static ref REGEXPS: Vec<regex::Regex> = vec![

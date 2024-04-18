@@ -1,9 +1,9 @@
 #[macro_use]
 extern crate rutie;
 
-use rutie::{Class, Object, RString, VM, Boolean};
-use regex::Regex;
 use lazy_static::lazy_static;
+use regex::Regex;
+use rutie::{Boolean, Class, Object, RString, VM};
 
 lazy_static! {
     static ref REGEXPS: Vec<regex::Regex> = vec![
@@ -32,11 +32,8 @@ class!(RubyRustBridge);
 methods!(
     RubyRustBridge,
     _rtself,
-
     fn regex_matches(input: RString) -> Boolean {
-        let ruby_string = input.
-            map_err(|e| VM::raise_ex(e) ).
-            unwrap();
+        let ruby_string = input.map_err(|e| VM::raise_ex(e)).unwrap();
 
         let string = &ruby_string.to_string();
 
