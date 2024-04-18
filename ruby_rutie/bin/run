@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "ruby_rutie"
+
+posts = File.read('../posts.txt').lines
+loops = ARGV[0].to_i
+matched = 0
+
+loops.times do
+  posts.each do |txt|
+    if RubyRustBridge.regex_matches(txt)
+      matched += 1
+    end
+  end
+end
+
+puts matched / loops

@@ -1,0 +1,20 @@
+PATH
+  remote: .
+  specs:
+    ruby_rutie (0.1.0)
+      rutie (~> 0.0.4)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rutie (0.0.4)
+
+PLATFORMS
+  arm64-darwin-21
+  ruby
+
+DEPENDENCIES
+  ruby_rutie!
+
+BUNDLED WITH
+   2.5.6
