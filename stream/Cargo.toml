@@ -1,0 +1,10 @@
+[package]
+name = "stream"
+edition = "2021"
+
+[[bin]]
+name = "stream"
+path = "stream.rs"
+
+[dependencies]
+regex = "1.5.4"
