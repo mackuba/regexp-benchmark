@@ -23,7 +23,8 @@ fn main() {
     // ];
 
     // Connect to the SQLite database
-    let conn = Connection::open("../../bluefeeds/db/blueskydev.sqlite3").expect("Failed to open database");
+    let conn =
+        Connection::open("../../bluefeeds/db/blueskydev.sqlite3").expect("Failed to open database");
 
     // Initial time for the first query
     let mut last_time: Option<String> = None;
@@ -35,18 +36,15 @@ fn main() {
         let mut stmt = match last_time {
             Some(ref time) => {
                 let mut stmt = conn
-                    .prepare(
-                        "SELECT * FROM posts WHERE time > ? ORDER BY time LIMIT 100000",
-                    )
+                    .prepare("SELECT * FROM posts WHERE time > ? ORDER BY time LIMIT 100000")
                     .expect("Failed to prepare query");
-                stmt.bind((1, time.as_str())).expect("Failed to bind parameter");
+                stmt.bind((1, time.as_str()))
+                    .expect("Failed to bind parameter");
                 stmt
             }
             None => {
                 let mut stmt = conn
-                    .prepare(
-                        "SELECT * FROM posts ORDER BY time LIMIT 100000",
-                    )
+                    .prepare("SELECT * FROM posts ORDER BY time LIMIT 100000")
                     .expect("Failed to prepare query");
                 stmt
             }
