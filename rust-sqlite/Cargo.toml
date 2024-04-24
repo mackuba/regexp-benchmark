@@ -1,0 +1,10 @@
+[package]
+name = "rust-sqlite-test"
+edition = "2021"
+
+[[bin]]
+name = "rust-sqlite-test"
+path = "rust-sqlite-test.rs"
+
+[dependencies]
+sqlite = "0.35.0"
