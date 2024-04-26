@@ -50,35 +50,6 @@ fn main() {
             }
         };
 
-        //let mut rows = stmt.query().expect("Failed to execute query");
-
-
-        // Prepare the query
-        /*let mut stmt = conn
-            .prepare(
-                "SELECT * FROM posts WHERE time > ? ORDER BY time LIMIT 100000",
-            )
-            .expect("Failed to prepare query");
-
-        // Bind the last_time parameter if it exists
-        if let Some(ref time) = last_time {
-            stmt.bind((1, time.as_str())).expect("Failed to bind parameter");
-        }*/
-
-        // Execute the query
-        //let mut rows = stmt.query().expect("Failed to execute query");
-
-        // Check if there are any rows returned
-        // if !stmt.next() {
-        //     println!("No more rows");
-        //     break; // No more rows, exit the loop
-        // }
-
-        // println!("Got some rows");
-
-        // Iterate over the rows
-        //while let Ok(State::Row) = statement.next() {
-
         let mut found = false;
         let mut rows = 0;
 
@@ -108,19 +79,3 @@ fn main() {
 
     println!("Total posts matching Linux regexps: {}", count);
 }
-
-
-
-
-
-// fn main() {
-//
-//         let contains_color = if is_blue {
-//             regexps.iter().any(|r| r.find(&second_line).is_some())
-//         } else {
-//             second_line.contains("green")
-//         };
-//
-//         println!("{}", if contains_color { "1" } else { "0" });
-//     }
-// }
