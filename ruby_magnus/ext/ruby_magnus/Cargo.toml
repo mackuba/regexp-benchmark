@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 magnus = "0.6.3"
-regex = "1.5.4"
+regex = "1.10.4"
 
 [lib]
 name = "ruby_magnus"
