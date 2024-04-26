@@ -1,26 +1,26 @@
+use regex::Regex;
 use sqlite::{Connection, State};
-// use regex::Regex;
 
 fn main() {
-    // let regexps = vec![
-    //     Regex::new(r"(?i)linux").unwrap(),
-    //     Regex::new(r"(?i)debian").unwrap(),
-    //     Regex::new(r"(?i)ubuntu").unwrap(),
-    //     Regex::new(r#"\bredhat\b"#).unwrap(),
-    //     Regex::new(r"\bRHEL\b").unwrap(),
-    //     Regex::new(r"\bSUSE\b").unwrap(),
-    //     Regex::new(r"\bCentOS\b").unwrap(),
-    //     Regex::new(r"(?i)\bopensuse\b").unwrap(),
-    //     Regex::new(r"(?i)\bslackware\b").unwrap(),
-    //     Regex::new(r"\bKDE\b").unwrap(),
-    //     Regex::new(r"\bGTK\d?\b").unwrap(),
-    //     Regex::new(r"#GNOME\b").unwrap(),
-    //     Regex::new(r"\bGNOME\s?\d+").unwrap(),
-    //     Regex::new(r"(?i)\bkde plasma\b").unwrap(),
-    //     Regex::new(r"apt-get").unwrap(),
-    //     Regex::new(r"(?i)\bflatpak\b").unwrap(),
-    //     Regex::new(r"\b[Xx]org\b").unwrap(),
-    // ];
+    let regexps = vec![
+        Regex::new(r"(?i)linux").unwrap(),
+        Regex::new(r"(?i)debian").unwrap(),
+        Regex::new(r"(?i)ubuntu").unwrap(),
+        Regex::new(r#"\bredhat\b"#).unwrap(),
+        Regex::new(r"\bRHEL\b").unwrap(),
+        Regex::new(r"\bSUSE\b").unwrap(),
+        Regex::new(r"\bCentOS\b").unwrap(),
+        Regex::new(r"(?i)\bopensuse\b").unwrap(),
+        Regex::new(r"(?i)\bslackware\b").unwrap(),
+        Regex::new(r"\bKDE\b").unwrap(),
+        Regex::new(r"\bGTK\d?\b").unwrap(),
+        Regex::new(r"#GNOME\b").unwrap(),
+        Regex::new(r"\bGNOME\s?\d+").unwrap(),
+        Regex::new(r"(?i)\bkde plasma\b").unwrap(),
+        Regex::new(r"apt-get").unwrap(),
+        Regex::new(r"(?i)\bflatpak\b").unwrap(),
+        Regex::new(r"\b[Xx]org\b").unwrap(),
+    ];
 
     // Connect to the SQLite database
     let conn =
@@ -90,8 +90,7 @@ fn main() {
             let time: String = stmt.read("time").expect("Failed to get time column");
             let text: String = stmt.read("text").expect("Failed to get content column");
 
-            // Check if the content contains "linux"
-            if text.contains("linux") {
+            if regexps.iter().any(|r| r.find(&text).is_some()) {
                 count += 1;
             }
 
@@ -100,14 +99,14 @@ fn main() {
         }
 
         if found {
-            println!("Found {} rows", rows);
+            // println!("Found {} rows", rows);
         } else {
-            println!("No more rows");
+            // println!("No more rows");
             break;
         }
     }
 
-    println!("Total posts containing 'linux': {}", count);
+    println!("Total posts matching Linux regexps: {}", count);
 }
 
 
