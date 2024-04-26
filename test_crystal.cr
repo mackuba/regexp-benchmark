@@ -1,7 +1,21 @@
 regexps = [
-  /linux/i, /debian/i, /ubuntu/i, /\bredhat\b/i, /\bRHEL\b/, /\bSUSE\b/, /\bCentOS\b/, /\bopensuse\b/i,
-  /\bslackware\b/i, /\bKDE\b/, /\bGTK\d?\b/, /#GNOME\b/, /\bGNOME\s?\d+/, /\bkde plasma\b/i,
-  /apt\-get/, /\bflatpak\b/i, /\b[Xx]org\b/
+  Regex.new("linux", Regex::CompileOptions::IGNORE_CASE),
+  Regex.new("debian", Regex::CompileOptions::IGNORE_CASE),
+  Regex.new("ubuntu", Regex::CompileOptions::IGNORE_CASE),
+  Regex.new("\\bredhat\\b", Regex::CompileOptions::IGNORE_CASE),
+  Regex.new("\\bRHEL\\b"),
+  Regex.new("\\bSUSE\\b"),
+  Regex.new("\\bCentOS\\b"),
+  Regex.new("\\bopensuse\\b", Regex::CompileOptions::IGNORE_CASE),
+  Regex.new("\\bslackware\\b", Regex::CompileOptions::IGNORE_CASE),
+  Regex.new("\\bKDE\\b"),
+  Regex.new("\\bGTK\\d?\\b"),
+  Regex.new("#GNOME\\b"),
+  Regex.new("\\bGNOME\\s?\\d+"),
+  Regex.new("\\bkde plasma\\b", Regex::CompileOptions::IGNORE_CASE),
+  Regex.new("apt\\-get"),
+  Regex.new("\\bflatpak\\b", Regex::CompileOptions::IGNORE_CASE),
+  Regex.new("\\b[Xx]org\\b")
 ]
 
 posts = File.read_lines("posts.txt")
