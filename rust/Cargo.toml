@@ -8,4 +8,3 @@ name = "test_rust"
 path = "test_rust.rs"
 
 [dependencies]
-regex = "1.5.4"

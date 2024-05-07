@@ -239,7 +239,6 @@ name = "ruby_magnus"
 version = "0.1.0"
 dependencies = [
  "magnus",
- "regex",
 ]
 
 [[package]]
