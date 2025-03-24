@@ -3,8 +3,8 @@
 require 'crystalruby'
 
 module Crystal
-  crystalize [loops: :int] => :int
-  def run(loops)
+  crystalize
+  def run(loops: :int, returns: :int)
     regexps = [
       /linux/i, /debian/i, /ubuntu/i, /\bredhat\b/i, /\bRHEL\b/, /\bSUSE\b/, /\bCentOS\b/, /\bopensuse\b/i,
       /\bslackware\b/i, /\bKDE\b/, /\bGTK\d?\b/, /#GNOME\b/, /\bGNOME\s?\d+/, /\bkde plasma\b/i,
