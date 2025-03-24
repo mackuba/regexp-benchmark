@@ -6,8 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-magnus = "0.6.3"
-regex = "1.10.4"
+magnus = "0.7.1"
+regex = "1.11.1"
 
 [lib]
 name = "ruby_magnus"
