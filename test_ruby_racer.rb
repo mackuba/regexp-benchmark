@@ -23,7 +23,7 @@ js = MiniRacer::Context.new
 js.eval(worker_script, filename: 'worker.js')
 
 loops.times do
-  matched += js.call('matchLines', posts).select { |r| r == 1 }.length
+  matched += js.call('matchLines', posts).select { |r| r }.length
 
   # posts.each do |txt|
   #   if js.call('matchLine', txt)
