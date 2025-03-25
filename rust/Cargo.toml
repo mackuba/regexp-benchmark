@@ -9,3 +9,18 @@ path = "test_rust.rs"
 
 [dependencies]
 regex = "1.11.1"
+
+# to optimize bundle size:
+# https://github.com/johnthagen/min-sized-rust
+#
+# [profile.release]
+# strip = true
+# opt-level = "z"
+# lto = true
+# codegen-units = 1
+# panic = "abort"
+#
+# [profile.release.package."*"]
+# strip = true
+# opt-level = "z"
+# codegen-units = 1
